@@ -30,6 +30,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
             @request.punishment, @request.plan, @request.logo,
             @request.club_type
           create_user_club @request.user_id, @club.id
+          binding.pry
           send_mail_club_request @request.user_id, @club
         end
         flash[:success] = t("success_process")

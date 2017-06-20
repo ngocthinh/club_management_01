@@ -9,9 +9,12 @@ class ClubRequest < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true,
     length: {maximum: Settings.club_request.max_name_length}
-  validates :description, presence: true,
-    length: {minimum: Settings.club_request.min_description_length,
-      maximum: Settings.club_request.max_description_length}
+  validates :content_club, presence: true,
+    length: {minimum: Settings.club_request.min_content_length,
+      maximum: Settings.club_request.max_content_length}
+  validates :goal, presence: true,
+    length: {minimum: Settings.club_request.min_goal_length,
+      maximum: Settings.club_request.max_goal_length}
 
   delegate :full_name, to: :user, allow_nil: :true
 

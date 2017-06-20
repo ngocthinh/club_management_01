@@ -18,8 +18,12 @@ class Club < ApplicationRecord
   mount_uploader :logo, ImageUploader
 
   validates :name, presence: true, uniqueness: true
-  validates :description, presence: true,
-    length: {minimum: Settings.min_description}
+  validates :content_club, presence: true,
+    length: {minimum: Settings.club.min_content_length,
+      maximum: Settings.club.max_content_length}
+  validates :goal, presence: true,
+    length: {minimum: Settings.club.min_goal_length,
+      maximum: Settings.club.max_goal_length}
 
   enum club_type: {hobbies: 8, sport: 1, game: 2, education: 3, music: 4,
     entertainment: 5, confidential: 6, junket: 7, other: 0}

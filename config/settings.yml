@@ -101,9 +101,24 @@ organization_request:
   max_name_length: 255
   max_location_length: 255
 club_request:
-  min_description_length: 10
-  max_description_length: 255
+  min_content_length: 10
+  max_content_length: 255
+  min_goal_length: 10
+  max_goal_length: 255
   max_name_length: 255
+club:
+  min_content_length: 10
+  max_content_length: 255
+  min_goal_length: 10
+  max_goal_length: 255
 feed_back:
   min_content: 20
   max_content: 255
+days:
+  monday: "Monday"
+  tuesday: "Tuesday"
+  wednesday: "Wednesday"
+  thursday: "Thursday"
+  friday: "Friday"
+  satuday: "Satuday"
+  sunday: "Sunday"

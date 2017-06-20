@@ -18,6 +18,7 @@ class ClubRequestsController < ApplicationController
 
   def create
     request = ClubRequest.new request_params
+    request.time_club = time_club params[:club_request][:time_club]
     if request.save
       flash[:success] = t("success_create")
       redirect_to root_path
@@ -30,8 +31,13 @@ class ClubRequestsController < ApplicationController
   private
   def request_params
     club_type = params[:club_request][:club_type].to_i
-    params.require(:club_request).permit(:name, :logo,
-      :description, :action, :organization_id).merge! user_id: current_user.id,
-      club_type: club_type
+    params.require(:club_request).permit(:name, :logo, :action,
+      :organization_id, :member, :goal, :local_club,
+      :content_club, :rules_club, :rule_finance, :time_join, :punishment,
+      :plan, :goal).merge! user_id: current_user.id, club_type: club_type
+  end
+
+  def time_club time_club_params
+    time_club_params.join(",") unless time_club_params.nil?
   end
 end

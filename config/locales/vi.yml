@@ -437,6 +437,23 @@ vi:
   cant_create_organization: "Không thể tạo tổ chức"
   cant_approve: "Không thể chấp thuận yêu cầu, vui lòng xem lại thông tin yêu cầu và thử lại!"
   event: "Sự kiện"
+  member_count: "Số lượng thành viên tham gia"
+  local_club: "Địa điểm hoạt động"
+  content_club: "Nội dung hoạt động"
+  rules_club: "Quy định câu lạc bộ"
+  punishment: "Kỷ luật"
+  plan: "Kế hoạch 3 tháng sắp tới"
+  rule_finance: "Quy định về tài chính"
+  time_join: "Quy định thời gian tham gia của thành viên"
+  time_club: "Câu lạc bộ sinh hoạt định kỳ"
+  goal: "Mục tiêu câu lục bộ"
+  monday: "Thứ hai"
+  tuesday: "Thứ ba"
+  wednesday: "Thứ tư"
+  thursday: "Thứ năm"
+  friday: "Thứ sáu"
+  satuday: "Thứ bảy"
+  sunday: "Chủ nhật"
   member:
     clubs: "Câu lạc bộ đã tham gia"
     show: "Thành viên"
@@ -539,7 +556,8 @@ vi:
         phone: "Số điện thoại"
       club_request:
         name: "Tên câu lạc bộ"
-        description: "Mô tả"
+        content_club: "Nội dung hoạt động"
+        goal: "Mục tiêu"
       organization:
         name: "Tên tổ chức"
         email: "Email"
@@ -590,7 +608,11 @@ vi:
               blank: " không được bỏ trống"
               too_short: *too_short
               too_long: *too_short
-            description:
+            content_club:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            goal:
               blank: " không được bỏ trống"
               too_short: *too_short
               too_long: *too_long

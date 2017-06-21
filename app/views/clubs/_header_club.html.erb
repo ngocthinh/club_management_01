@@ -29,7 +29,9 @@
           <% end %>
         <% end %>
       </p>
-      <p><%= get_day_view @club.time_activity %></p>
+      <% @club.time_activity.each do |day| %>
+        -<%= I18n.t('date.day_names')[day.to_i] %>-
+      <% end%>
     </div>
     <div class="container"></div>
   </section>

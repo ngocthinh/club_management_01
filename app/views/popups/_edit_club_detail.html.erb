@@ -54,9 +54,18 @@
               <label class="col-md-3 control-label" for="user-settings-password">
                 <%= t "notification" %>
               </label>
-              <div class="col-md-8">
-                <%= f.text_area :notification, value: @club.notification, class: "form-control" %>
-              </div>
+              <% for day in I18n.t('date.day_names') %>
+                  <%= check_box_tag 'club[time_activity][]',
+                    day, check_date(@club.time_activity, day) %>
+                  <label><%= day %></label>
+                <% end %>
+            </div>
+            <div class="col-md-12">
+              <label for="contact-message"><%= t "goal_club" %>
+                <span class="text-danger">*</span>
+              </label>
+              <%= f.text_area :goal, placeholder: t("goal_club"),
+                class: "form-control input-lg", id: "contact-message", row: 10  %>
             </div>
           </fieldset>
           <div class="form-group form-actions">

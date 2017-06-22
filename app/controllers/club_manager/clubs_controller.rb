@@ -21,8 +21,8 @@ class ClubManager::ClubsController < BaseClubManagerController
 
   private
   def club_params
-    params.require(:club).permit :name, :description, :logo, :image,
-      :notification, :tag_list
+    params.require(:club).permit :name, :content, :logo, :image, :goal, :tag_list,
+    time_activity: []
   end
 
   def load_club

@@ -21,9 +21,9 @@
         <%= render "ratings/rating" %>
       </span>
       <p class="h3 animation-slideUp hidden-xs description-club-text">
-        <%= @club.local.truncate(Settings.club_description).html_safe %>
-        <% if @club.local.length > Settings.club_description %>
-          <%= link_to "#modal-club-location", data: {toggle: "modal"},
+        <%= @club.content.truncate(Settings.club_description).html_safe %>
+        <% if @club.content.length > Settings.club_description %>
+          <%= link_to "#modal-content-club", data: {toggle: "modal"},
             class: "btn btn-sm btn-default animation-fadeIn360" do %>
             <i class="fa fa-plus "></i> <%= t "more" %>
           <% end %>
@@ -36,9 +36,9 @@
   <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
 <div class="pull-right button-readmore-club">
-  <%= link_to "#modal-content-club", data: {toggle: "modal"},
+  <%= link_to "#modal-club-location", data: {toggle: "modal"},
     class: "btn btn-sm btn-default animation-fadeIn360" do %>
-    <i class="fa fa-plus-square"></i> <%= t "content_club" %>
+    <i class="fa fa-plus-square"></i> <%= t "local_club" %>
   <% end %>
   <%= link_to "#modal-goal-club", data: {toggle: "modal"},
     class: "btn btn-sm btn-default animation-fadeIn360" do %>

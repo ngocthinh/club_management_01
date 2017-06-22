@@ -13,7 +13,7 @@
       <p class="h3 animation-slideUp hidden-xs">
         <% if @club.content.length > Settings.club_description %>
           <%= @club.content.truncate(Settings.club_description).html_safe %>
-          <%= link_to "#modal-club-description", data: {toggle: "modal"},
+          <%= link_to "#modal-content-club", data: {toggle: "modal"},
             class: "btn btn-xs btn-default animation-fadeIn360" do %>
             <i class="fa fa-plus "></i> <%= t "more" %>
           <% end %>
@@ -131,7 +131,4 @@
   aria-hidden="true">
   <%= render "popups/list_user_organization" %>
 </div>
-<div id="modal-club-description" class="modal fade" tabindex="-1" role="dialog"
-  aria-hidden="true">
-  <%= render "popups/description" %>
-</div>
+<%= render "clubs/modal_club_field" %>
